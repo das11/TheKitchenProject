@@ -4,9 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Explore</title>
   <meta name="description" content="Start your development with a Design System for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
   <title>Argon Design System - Free Design System for Bootstrap 4</title>
+
   <!-- Favicon -->
   <link href="../assets/img/brand/favicon.png" rel="icon" type="image/png">
   <!-- Fonts -->
@@ -16,8 +19,16 @@
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="assets/css/argon.css?v=1.0.0" rel="stylesheet">
+
+
   
-</head>
+
+
+  </head>
+
+  
+
+
 
 <body>
   <header class="header-global">
@@ -129,6 +140,12 @@
   <main>
     <section class="section section-shaped section-lg my-0">
       <div class="shape shape-style-1 bg-gradient-light">
+      </div>
+      <div class="container pt-lg-md">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-header bg-white pb-5" id="exp" align="center">
         <span></span>
         <span></span>
         <span></span>
@@ -218,6 +235,16 @@
       </div>
     </section>
   </main>
+
+
+<!--
+  <footer class="footer">
+    <div class="container">
+      <div class="row row-grid align-items-center mb-5">
+      </div>
+    </div>
+  </footer>
+-->
   <footer class="footer">
     <div class="container">
       <div class="row row-grid align-items-center mb-5">
@@ -267,6 +294,7 @@
       </div>
     </div>
   </footer>
+
   <!-- Core -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/popper/popper.min.js"></script>
@@ -274,6 +302,37 @@
   <!-- <script src="assets/vendor/headroom/headroom.min.js"></script> -->
   <!-- Argon JS -->
   <script src="assets/js/argon.js?v=1.0.0"></script>
+          
+          <script>
+
+
+      fetch('https://api.myjson.com/bins/lyd18')
+      .then((response) => response.json())
+      .then(function(data)
+        {   const exp= document.getElementById('exp');
+            data.forEach(explore =>
+              {
+                let div = document.createElement('div');
+                    p = document.createElement('p');
+                    img = document.createElement('img');
+
+                p.textContent = explore.title;
+                img.width = 450;
+                img.height = 150;
+                img.src = explore.image;
+
+                div.appendChild(p);
+                div.appendChild(img);
+                exp.appendChild(div);
+              })
+
+        })
+        .catch(function(error){
+          console.log(error);
+        });
+
+</script>
 </body>
 
 </html>
+
