@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Start your development with a Design System for Bootstrap 4.">
-  <meta name="author" content="Creative Tim">
+
   <title>Orders</title>
   <!-- Favicon -->
   <link href="../assets/img/brand/favicon.png" rel="icon" type="image/png">
@@ -16,54 +15,79 @@
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="assets/css/argon.css?v=1.0.0" rel="stylesheet">
+<script>
 
+fetch('https://the-kitchen-project-backend.herokuapp.com/orders_api')
+    .then((response) => response.json())
+    .then(function(data)
+      { var arr = data.orders;
+
+        const ul= document.getElementById('order');
+        arr.forEach(explore =>
+            {
+              let li =document.createElement('li');
+                  id = document.createElement('p');
+                    date = document.createElement('p');
+                      chef = document.createElement('p');
+                      map = document.createElement('iframe');
+
+
+              id.textContent = 'ID:' + explore.o_id;
+                date.textContent = 'Date:' + explore.date;
+                  chef.textContent = 'Chef:' + explore.chef;
+                  map.src=explore.map;
+                  map.width="100%";
+                  map.height="150";
+
+
+
+              li.appendChild(id);
+              li.appendChild(date);
+              li.appendChild(chef);
+              li.appendChild(map);
+
+
+              ul.appendChild(li);
+            })
+
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+
+</script>
 </head>
-
   <body>
-<section class="section section-shaped section-lg my-0">
-      <div class="shape shape-style-1 bg-gradient-light">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="container pt-lg-md">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="card bg-secondary shadow border-0">
-              <div class="card-header bg-white pb-5">
-                <div class="text-muted text-center mb-3">
-                  <big> CURRENT ORDERS</big>
-                </div>
 
-              </div>
-              <div class="card-body px-lg-5 py-lg-5">
-                <div class="container">
-                  <li id="id">Order id : 0001</li>
-                  <li id="date">Date : 29/07/2018</li>
-                  <li id="authors">Chef : </li>
-                  </div>
-              </div>
-
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-10">
+        <div class="card bg-secondary shadow border-0">
+          <div class="card-header bg-white pb-5">
+            <div class="text-muted text-center mb-3">
+              <big> CURRENT ORDERS</big>
             </div>
+
           </div>
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="container">
+                <ul id="order"  style=>
+
+                </ul>
+              </div>
+          </div>
+
+
         </div>
       </div>
+    </div>
+  </div>
+<!-- <section class="section section-shaped section-lg my-0"> -->
+      <div class="shape shape-style-1 bg-gradient-light">
+
+      </div>
+      <div class=" pt-lg-md">
+
     </section>
   </body>
-  <script src="orders.js">
-
-  </script>
-</script>  <!-- Core -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/popper/popper.min.js"></script>
-<script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
-<!-- <script src="assets/vendor/headroom/headroom.min.js"></script> -->
-<!-- Argon JS -->
-<script src="assets/js/argon.js?v=1.0.0"></script>
 
 </html>
