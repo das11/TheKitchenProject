@@ -15,6 +15,12 @@
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="assets/css/argon.css?v=1.0.0" rel="stylesheet">
+
+  <style>
+  p{
+    margin-bottom: 0rem;
+  }
+</style>>
 <script>
 
 fetch('https://the-kitchen-project-backend.herokuapp.com/orders_api')
@@ -22,32 +28,39 @@ fetch('https://the-kitchen-project-backend.herokuapp.com/orders_api')
     .then(function(data)
       { var arr = data.orders;
 
-        const ul= document.getElementById('order');
+        const ContentArea= document.getElementById('content');
         arr.forEach(explore =>
             {
-              let li =document.createElement('li');
+              let 
+                  
+                  card =document.createElement('div');
                   id = document.createElement('p');
-                    date = document.createElement('p');
-                      chef = document.createElement('p');
-                      map = document.createElement('iframe');
+                  date = document.createElement('p');
+                  chef = document.createElement('p');
+                  map = document.createElement('iframe');
 
-
-              id.textContent = 'ID:' + explore.o_id;
-                date.textContent = 'Date:' + explore.date;
-                  chef.textContent = 'Chef:' + explore.chef;
+                map.style="margin-top: 10px;margin-bottom:5px";
+                card.style=" background-color:white; margin-top:20px; margin-bottom: 20px; border-radius: 4px; border:3px solid white";
+                card.class="container shadow"; 
+                id.textContent = '* ID : ' +  explore.o_id;
+                id.style="padding-left:7px;padding-top: 20px";
+                date.textContent = 'Date : ' +  explore.date;
+                date.style="padding-left:20px" ;
+                  chef.textContent = 'Chef : ' +  explore.chef;
+                  chef.style="padding-left:20px";
                   map.src=explore.map;
                   map.width="100%";
                   map.height="150";
 
 
 
-              li.appendChild(id);
-              li.appendChild(date);
-              li.appendChild(chef);
-              li.appendChild(map);
+              card.appendChild(id);
+              card.appendChild(date);
+              card.appendChild(chef);
+              card.appendChild(map);
+              ContentArea.appendChild(card);
+            
 
-
-              ul.appendChild(li);
             })
 
       })
@@ -59,21 +72,30 @@ fetch('https://the-kitchen-project-backend.herokuapp.com/orders_api')
 </head>
   <body>
 
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center">
       <div class="col-lg-10">
-        <div class="card bg-secondary shadow border-0">
-          <div class="card-header bg-white pb-5">
+        <div class="card shadow border-0" style="background-color: #9fa4a9">
+          <div class="card-header bg-white">
             <div class="text-muted text-center mb-3">
               <big> CURRENT ORDERS</big>
             </div>
 
           </div>
-          <div class="card-body px-lg-5 py-lg-5">
-            <div class="container">
-                <ul id="order"  style=>
 
-                </ul>
+          <div class="secondary-nav-container container">
+              <div style="margin-top:25px"></div>
+              <div style="grid-row-gap: 
+              <div class="container">
+
+                <div id='content'>
+                
+
+                </div>
+            
+                
+              
               </div>
+
           </div>
 
 
@@ -81,13 +103,7 @@ fetch('https://the-kitchen-project-backend.herokuapp.com/orders_api')
       </div>
     </div>
   </div>
-<!-- <section class="section section-shaped section-lg my-0"> -->
-      <div class="shape shape-style-1 bg-gradient-light">
 
-      </div>
-      <div class=" pt-lg-md">
-
-    </section>
   </body>
 
 </html>
