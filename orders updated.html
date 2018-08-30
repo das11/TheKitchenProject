@@ -43,11 +43,11 @@ fetch('https://the-kitchen-project-backend.herokuapp.com/orders_api')
                 card.style=" background-color:white; margin-top:20px; margin-bottom: 20px; border-radius: 4px; border:3px solid white";
                 card.class="container shadow"; 
                 id.textContent = '* ID : ' +  explore.o_id;
-                id.style="padding-left:7px;padding-top: 20px";
+                id.style="padding-left:7px;padding-top: 20px;font-weight: bold";
                 date.textContent = 'Date : ' +  explore.date;
-                date.style="padding-left:20px" ;
+                date.style="padding-left:20px;font-weight: bold" ;
                   chef.textContent = 'Chef : ' +  explore.chef;
-                  chef.style="padding-left:20px";
+                  chef.style="padding-left:20px;font-weight: bold";
                   map.src=explore.map;
                   map.width="100%";
                   map.height="150";
