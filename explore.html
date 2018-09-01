@@ -27,18 +27,22 @@
           arr.forEach(explore =>
               {
                 let card = document.createElement('div');
+                    translucent = document.createElement('div');
                     categoryText = document.createElement('div');
                     a =document.createElement('a');
                     // -card.class="card-body px-lg-3 py-lg-3"
-                card.class="shadow border -1";
-                card.style = "border:1px solid white ; margin-top:5px; margin-bottom:5px ; height: 65px ;background-image: url("+explore.image+")";
-                categoryText.style = "padding:15px 15px; color: white ; opacity: 0.8;font-size:20px; font-family: Arial; text-align: center ; text-transform : uppercase; text-shadow: 1px 1px grey; ";
+
+                card.style = "border:5px outset white ;border-radius:9px; margin-top:10px; margin-bottom:10px ; height: 150px ;background-image: url("+explore.image+")";
+                translucent.style = "background-color: #4f4f6978; height=100%;border-radius:5px;"
+                categoryText.style = "padding:55px 55px; color: white ;font-size:20px; font-family: Arial; text-align: center ; text-transform : uppercase; text-shadow: 1px 1px grey; ";
                 categoryText.textContent = explore.title;
                 a.href = "http://www.google.com";
 
 
 
-                card.appendChild(a);
+
+                card.appendChild(translucent);
+                translucent.appendChild(a);
                 a.appendChild(categoryText);
                 exp.appendChild(card);
               })
@@ -60,7 +64,7 @@
             <div class="card bg-secondary shadow border-1">
 
               <div class="card-header bg-white">
-                <div class="text-muted text-center" style="Font-size:35px; letter-spacing:3px; text-shadow: 2px 2px #dee0e2ed; ">
+                <div style="Font-size:40px; color: #182f56; text-align: center; letter-spacing:3px; text-shadow: 2px 2px #dee0e2ed; ">
                    EXPLORE
                 </div>
               </div>
