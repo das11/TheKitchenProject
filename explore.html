@@ -15,8 +15,6 @@
   <!-- Argon CSS -->
   <link type="text/css" href="assets/css/argon.css?v=1.0.0" rel="stylesheet">
 
-
-
   <script>
       fetch('https://the-kitchen-project-backend.herokuapp.com/explore_api')
       .then((response) => response.json())
@@ -24,22 +22,18 @@
         { var arr = data.categories;
 
           const exp= document.getElementById('content');
-          arr.forEach(explore =>
+          arr.forEach(data=>
               {
                 let card = document.createElement('div');
                     translucent = document.createElement('div');
                     categoryText = document.createElement('div');
                     a =document.createElement('a');
-                    // -card.class="card-body px-lg-3 py-lg-3"
 
-                card.style = "border:5px outset white ;border-radius:9px; margin-top:10px; margin-bottom:10px ; height: 150px ;background-image: url("+explore.image+")";
-                translucent.style = "background-color: #4f4f6978; height=100%;border-radius:5px;"
-                categoryText.style = "padding:55px 55px; color: white ;font-size:20px; font-family: Arial; text-align: center ; text-transform : uppercase; text-shadow: 1px 1px grey; ";
-                categoryText.textContent = explore.title;
-                a.href = "http://kabirdas.xyz/TheKitchenProject/Chefs";
-
-
-
+                card.style = "border:2px outset white; border-radius:3px; margin-bottom:5px; height:80px; background-image:url("+data.image+")";
+                translucent.style = "background-color: #8898aab0; height=100%;border-radius:3px;"
+                categoryText.style = "padding:24px;color:white; font-size:20px; font-family:Arial; text-align:left;text-transform:uppercase;text-shadow:1px 1px grey;";
+                categoryText.textContent = data.title;
+                a.href = "http://www.google.com";
 
                 card.appendChild(translucent);
                 translucent.appendChild(a);
@@ -56,46 +50,38 @@
 </head>
 
 <body>
-
-
   <main>
-
-
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
+          <div>
             <div class="card bg-secondary shadow border-1">
 
-              <div class="card-header bg-white">
-                <div style="Font-size:40px; color: #182f56; text-align: center; letter-spacing:3px; text-shadow: 2px 2px #dee0e2ed; ">
+              <div style="padding:10px; background-color: white; box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2);">
+                <div style="Font-size:23px; color: #182f56; text-align: center; letter-spacing:3px; text-shadow: 2px 2px #dee0e2ed;">
                    EXPLORE
                 </div>
               </div>
 
 
-              <div class="card-body px-lg-3 py-lg-3">
-                <div style="margin-bottom:20px; width:100%; height: 70px;">
+              <div>
+                <div style="margin-top:3px;margin-bottom:3px; width:100%;">
                   <form action="">
-                      <input type="text" id="search" name="search" placeholder="Search for a dish or cuisine" style="width:100%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;">
+                      <input type="text" id="search" name="search" placeholder="Search for a dish or cuisine" style="width:100%;padding: 10px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;">
                   </form>
                 </div>
 
                 <div id="content">
 
                 </div>
-              </div>
-
-
-            </div>
           </div>
         </div>
-      </div>
   </main>
 
+  <div style="position: fixed; bottom: 0px; width: 100%">
   <div class="icon-bar sticky">
       <a class="active" href="#"><i class="fa fa-home"></i></a> 
-      <a href=""><i class="fa fa-search"></i></a> 
-      <a href="orders updated.html"><i class="fa fa-list"></i></a>
+      <a href="#"><i class="fa fa-search"></i></a> 
+      <a href="#"><i class="fa fa-list"></i></a>
       <a href="#"><i class="fa fa-user"></i></a> 
+  </div>
   </div>
 
   <!-- Core -->
