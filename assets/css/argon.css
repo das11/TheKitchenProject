@@ -18553,5 +18553,5 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 .sticky {
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    top: 0;
+    bottom: 0;
 }
