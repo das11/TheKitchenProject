@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Chefs</title>
+  <!-- Favicon -->
+  <link href="../assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="assets/css/argon.css?v=1.0.0" rel="stylesheet">
+  <!-- Star rating -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+
+  div.scrollmenu {
+      background-color: white;
+      overflow: auto;
+      white-space: nowrap;
+  }
+
+  div.scrollmenu div {
+      display: inline-block;
+      text-align: center;
+  }
+
+  div.scrollmenu div:hover {
+      background-color: #777;
+  }
+
+  .checked {
+      color: orange;
+  }
+
+  </style>
+
+  <script>
+      fetch('https://the-kitchen-project-backend.herokuapp.com/chefs_api')
+      .then((response) => response.json())
+      .then(function(data)
+        { var arr = data.chefs;
+
+          const ourchefs= document.getElementById('ourChefs');
+          arr.forEach(data=>
+              {
+                imagecard = document.createElement('div');
+                image = document.createElement('img');
+                chefName =document.createElement('p');
+                category=document.createElement('p');
+                star1=document.createElement('span');
+                star2=document.createElement('span');
+                star3=document.createElement('span');
+                star4=document.createElement('span');
+                star5=document.createElement('span');
+                avgRating=document.createElement('span');
+                totRating=document.createElement('span');
+                rating=document.createElement('span');
+
+                imagecard.style="background-color:white;border-radius: 3px; box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2);margin:6px; height:250px;width:170px;";
+
+                image.src=data.image;
+                image.style="border:1px solid #e9ecef; margin:5px;height:70%;width:90%";
+
+                chefName.textContent=data.name;
+                chefName.style="font-size:17px;font-weight:bold;text-align:center; margin-bottom:-8px;";
+
+                category.textContent=data.category;
+                category.style="font-size:14px;text-align:center;margin-bottom:-5px;";
+
+                avgRating.textContent=data.average_rating;
+                totRating.textContent="("+data.total_ratings+")";
+
+                star1.className="fa fa-star checked";
+                star2.className="fa fa-star checked";
+                star3.className="fa fa-star checked";
+                star4.className="fa fa-star checked";
+                star5.className="fa fa-star ";
+
+                rating.appendChild(star1);
+                rating.appendChild(star2);
+                rating.appendChild(star3);
+                rating.appendChild(star4);
+                rating.appendChild(star5);
+                rating.appendChild(avgRating);
+                rating.appendChild(totRating);
+                imagecard.appendChild(image);
+                imagecard.appendChild(chefName);
+                imagecard.appendChild(category);
+                imagecard.appendChild(rating);
+                ourchefs.appendChild(imagecard);
+              })
+
+          const featuredchefs= document.getElementById('featuredChefs');
+          arr.forEach(data=>
+              {
+                imagecard = document.createElement('div');
+                image = document.createElement('img');
+                chefName =document.createElement('p');
+                category=document.createElement('p');
+                star1=document.createElement('span');
+                star2=document.createElement('span');
+                star3=document.createElement('span');
+                star4=document.createElement('span');
+                star5=document.createElement('span');
+                avgRating=document.createElement('span');
+                totRating=document.createElement('span');
+                rating=document.createElement('span');
+
+                imagecard.style="background-color:white;border-radius: 3px; box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2);margin:6px; height:250px;width:170px;";
+
+                image.src=data.image;
+                image.style="border:1px solid #e9ecef; margin:5px;height:70%;width:90%";
+
+                chefName.textContent=data.name;
+                chefName.style="font-size:17px;font-weight:bold;text-align:center; margin-bottom:-8px;";
+
+                category.textContent=data.category;
+                category.style="font-size:14px;text-align:center;margin-bottom:-5px;";
+
+                avgRating.textContent=data.average_rating;
+                totRating.textContent="("+data.total_ratings+")";
+
+                star1.className="fa fa-star checked";
+                star2.className="fa fa-star checked";
+                star3.className="fa fa-star checked";
+                star4.className="fa fa-star checked";
+                star5.className="fa fa-star ";
+
+                rating.appendChild(star1);
+                rating.appendChild(star2);
+                rating.appendChild(star3);
+                rating.appendChild(star4);
+                rating.appendChild(star5);
+                rating.appendChild(avgRating);
+                rating.appendChild(totRating);
+                imagecard.appendChild(image);
+                imagecard.appendChild(chefName);
+                imagecard.appendChild(category);
+                imagecard.appendChild(rating);
+                featuredchefs.appendChild(imagecard);
+
+              })
+
+        })
+        .catch(function(error){
+          console.log(error);
+        });
+
+</script>
+</head>
+
+<body>
+  <main>
+
+          <div>
+            <div class="card bg-secondary shadow border-1">
+
+              <div style="padding:10px; background-color: white; box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2);">
+                <div style="Font-size:23px; color: #182f56; text-align: center; letter-spacing:3px; text-shadow: 2px 2px #dee0e2ed;">
+                   CHEFS
+                </div>
+              </div>
+
+              <div style="margin:5px;">
+                  <div style="background-color:#ffffff;box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2); margin-top:10px;margin-bottom:10px;">
+                    <div style="padding:5px; background-color:#e9ecef">OUR CHEFS</div>
+                    <div class="scrollmenu" id="ourChefs" style="background-color:#ffffff;"> </div>
+                  </div>
+
+                  <div style="height:50vh;background-color:#ffffff;box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2); margin-top:10px;margin-bottom:10px;">
+                    <div style="padding:5px;background-color:#e9ecef">FEATURED CHEFS</div>
+                    <div class="scrollmenu" id="featuredChefs" style="background-color:#ffffff;">  </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+  </main>
+  <div class="icon-bar sticky">
+      <a href="#"><i class="fa fa-home" style="color: #8b8b8b;"></i></a> 
+      <a href="http://kabirdas.xyz/TheKitchenProject/explore"><i class="fa fa-search" style="color: #8b8b8b;"></i></a> 
+      <a href="http://kabirdas.xyz/TheKitchenProject/orders updated.html"><i class="fa fa-list" style="color: #8b8b8b;"></i></a>
+      <a class="active" href="http://kabirdas.xyz/TheKitchenProject/Chefs"><i class="fa fa-user" style="color: #ffffff;"></i></a> 
+  </div>
+  <!--  -->
+
+  <!-- Core -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/popper/popper.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <!-- <script src="assets/vendor/headroom/headroom.min.js"></script> -->
+  <!-- Argon JS -->
+  <script src="assets/js/argon.js?v=1.0.0"></script>
+</body>
+
+</html>

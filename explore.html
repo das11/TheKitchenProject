@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Explore</title>
+  <!-- Favicon -->
+  <link href="../assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="assets/css/argon.css?v=1.0.0" rel="stylesheet">
+
+  <script>
+      fetch('https://the-kitchen-project-backend.herokuapp.com/explore_api')
+      .then((response) => response.json())
+      .then(function(data)
+        { var arr = data.categories;
+
+          const exp= document.getElementById('content');
+          arr.forEach(data=>
+              {
+                let card = document.createElement('div');
+                    translucent = document.createElement('div');
+                    categoryText = document.createElement('div');
+                    a =document.createElement('a');
+
+                card.style = "border:2px outset white; border-radius:3px; margin-bottom:5px; height:80px; background-image:url("+data.image+")";
+                translucent.style = "background-color: #8898aab0; height=100%;border-radius:3px;"
+                categoryText.style = "padding:24px;color:white; font-size:20px; font-family:Arial; text-align:left;text-transform:uppercase;text-shadow:1px 1px grey;";
+                categoryText.textContent = data.title;
+                a.href = "http://www.google.com";
+
+                card.appendChild(translucent);
+                translucent.appendChild(a);
+                a.appendChild(categoryText);
+                exp.appendChild(card);
+              })
+
+        })
+        .catch(function(error){
+          console.log(error);
+        });
+
+</script>
+</head>
+
+<body>
+  <main>
+            <div class="card bg-secondary shadow border-1">
+
+              <div style="padding:10px; background-color: white; box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2);">
+                <div style="Font-size:23px; color: #182f56; text-align: center; letter-spacing:3px; text-shadow: 2px 2px #dee0e2ed;">
+                   EXPLORE
+                </div>
+              </div>
+
+
+              <div>
+                <div style="margin-top:3px;margin-bottom:3px; width:100%;">
+                  <form action="">
+                      <input type="text" id="search" name="search" placeholder="Search for a dish or cuisine" style="width:100%;padding: 10px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;">
+                  </form>
+                </div>
+
+                <div id="content">
+
+                </div>
+              </div>
+        </div>
+  </main>
+
+  <div style="position: fixed; bottom: 0px; width: 100%">
+  <div class="icon-bar sticky">
+      <a href="#"><i class="fa fa-home" style="color: #8b8b8b;"></i></a> 
+      <a class="active" href="http://kabirdas.xyz/TheKitchenProject/explore"><i class="fa fa-search" style="color: #ffffff;"></i></a> 
+      <a href="http://kabirdas.xyz/TheKitchenProject/orders updated.html"><i class="fa fa-list" style="color: #8b8b8b;"></i></a>
+      <a href="http://kabirdas.xyz/TheKitchenProject/Chefs"><i class="fa fa-user" style="color: #8b8b8b;"></i></a> 
+  </div>
+  </div>
+
+  <!-- Core -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/popper/popper.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <!-- <script src="assets/vendor/headroom/headroom.min.js"></script> -->
+  <!-- Argon JS -->
+  <script src="assets/js/argon.js?v=1.0.0"></script>
+</body>
+
+</html>
