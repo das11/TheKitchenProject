@@ -125,66 +125,6 @@ div.desc {
       //End of side nav
 
 
-      //fetach data
-      fetch('https://the-kitchen-project-backend.herokuapp.com/chefs_api')
-      .then((response) => response.json())
-      .then(function(data)
-        { var arr = data.chefs;
-
-          const ourchefs= document.getElementById('ourChefs');
-          arr.forEach(data=>
-              {
-                imagecard = document.createElement('div');
-                image = document.createElement('img');
-                chefName =document.createElement('p');
-                category=document.createElement('p');
-                star1=document.createElement('span');
-                star2=document.createElement('span');
-                star3=document.createElement('span');
-                star4=document.createElement('span');
-                star5=document.createElement('span');
-                avgRating=document.createElement('span');
-                totRating=document.createElement('span');
-                rating=document.createElement('span');
-
-                imagecard.style="background-color:white;border-radius: 3px; box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2);margin:6px; height:250px;width:170px;";
-
-                image.src=data.image;
-                image.style="border:1px solid #e9ecef; margin:5px;height:70%;width:90%";
-
-                chefName.textContent=data.name;
-                chefName.style="font-size:17px;font-weight:bold;text-align:center; margin-bottom:-8px;";
-
-                category.textContent=data.category;
-                category.style="font-size:14px;text-align:center;margin-bottom:-5px;";
-
-                avgRating.textContent=data.average_rating;
-                totRating.textContent="("+data.total_ratings+")";
-
-                star1.className="fa fa-star checked";
-                star2.className="fa fa-star checked";
-                star3.className="fa fa-star checked";
-                star4.className="fa fa-star checked";
-                star5.className="fa fa-star ";
-
-                rating.appendChild(star1);
-                rating.appendChild(star2);
-                rating.appendChild(star3);
-                rating.appendChild(star4);
-                rating.appendChild(star5);
-                rating.appendChild(avgRating);
-                rating.appendChild(totRating);
-                imagecard.appendChild(image);
-                imagecard.appendChild(chefName);
-                imagecard.appendChild(category);
-                imagecard.appendChild(rating);
-                ourchefs.appendChild(imagecard);
-              })
-
-        })
-        .catch(function(error){
-          console.log(error);
-        });
 
     </script>
 </head>
@@ -208,6 +148,7 @@ div.desc {
                 </div>
                 <hr/ style="margin-left: 8px; margin-right: 8px;border:1px inset">
                 <a href="http://www.google.com"> <i class="fa fa-user-circle-o"></i> My Account</a>
+                <a href="http://kabirdas.xyz/TheKitchenProject/Home"> <i class="fa fa-home"></i> Home</a>
                 <a href="http://kabirdas.xyz/TheKitchenProject/explore"> <i class="fa fa-address-card-o"></i> Explore</a>
                 <a href="http://kabirdas.xyz/TheKitchenProject/orders"><i class="fa fa-shopping-cart"></i> Orders</a>
                 <a href="http://www.google.com"> <i class="fa fa-address-book-o"></i> Contact Us</a>
