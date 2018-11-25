@@ -88,6 +88,28 @@
       color: orange;
     }
 
+    //image_gallery
+    div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
   </style>
 
   <script>
@@ -104,67 +126,14 @@
 
 
       //fetach data
-      fetch('https://api.myjson.com/bins/lm126')
+      fetch('https://the-kitchen-project-backend.herokuapp.com/chefs_api')
       .then((response) => response.json())
       .then(function(data)
         { var arr = data.chefs;
 
           const ourchefs= document.getElementById('ourChefs');
           arr.forEach(data=>
-              { link = document.createElement('a');
-                imagecard = document.createElement('div');
-                image = document.createElement('img');
-                chefName =document.createElement('p');
-                category=document.createElement('p');
-                star1=document.createElement('span');
-                star2=document.createElement('span');
-                star3=document.createElement('span');
-                star4=document.createElement('span');
-                star5=document.createElement('span');
-                avgRating=document.createElement('span');
-                totRating=document.createElement('span');
-                rating=document.createElement('span');
-
-                imagecard.style="background-color:white;border-radius: 3px; box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2);margin:6px; height:250px;width:170px;";
-
-                image.src=data.image;
-                image.style="border:1px solid #e9ecef; margin:5px;height:70%;width:90%";
-
-                chefName.textContent=data.name;
-                chefName.style="font-size:17px;font-weight:bold;text-align:center; margin-bottom:-8px;";
-
-                category.textContent=data.category;
-                category.style="font-size:14px;text-align:center;margin-bottom:-5px;";
-
-                avgRating.textContent=data.average_rating;
-                totRating.textContent="("+data.total_ratings+")";
-
-                link.href="http://kabirdas.xyz/TheKitchenProject/chefsIndividual";
-
-                star1.className="fa fa-star checked";
-                star2.className="fa fa-star checked";
-                star3.className="fa fa-star checked";
-                star4.className="fa fa-star checked";
-                star5.className="fa fa-star ";
-
-                rating.appendChild(star1);
-                rating.appendChild(star2);
-                rating.appendChild(star3);
-                rating.appendChild(star4);
-                rating.appendChild(star5);
-                rating.appendChild(avgRating);
-                rating.appendChild(totRating);
-                imagecard.appendChild(image);
-                imagecard.appendChild(chefName);
-                imagecard.appendChild(category);
-                imagecard.appendChild(rating);
-                link.appendChild(imagecard);
-                ourchefs.appendChild(link);
-              })
-
-          const featuredchefs= document.getElementById('featuredChefs');
-          arr.forEach(data=>
-              { link = document.createElement('a');
+              {
                 imagecard = document.createElement('div');
                 image = document.createElement('img');
                 chefName =document.createElement('p');
@@ -198,8 +167,6 @@
                 star4.className="fa fa-star checked";
                 star5.className="fa fa-star ";
 
-                link.href="http://kabirdas.xyz/TheKitchenProject/chefsIndividual";
-
                 rating.appendChild(star1);
                 rating.appendChild(star2);
                 rating.appendChild(star3);
@@ -211,9 +178,7 @@
                 imagecard.appendChild(chefName);
                 imagecard.appendChild(category);
                 imagecard.appendChild(rating);
-                link.appendChild(imagecard);
-                featuredchefs.appendChild(link);
-
+                ourchefs.appendChild(imagecard);
               })
 
         })
@@ -249,17 +214,27 @@
               </div>
 
               <!--     content         -->
-              <div style="margin:5px;">
-                  <div style="height:50vh;background-color:#dbdbdb;box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2); margin-top:10px;margin-bottom:10px;">
-                    <div style="padding:5px; background-color:#e9ecef">OUR CHEFS</div>
-                    <div class="scrollmenu" id="ourChefs" style="background-color:#dbdbdb;"> </div>
-                  </div>
-
-                  <div style="height:50vh;background-color:#dbdbdb;box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2); margin-top:10px;margin-bottom:10px;">
-                    <div style="padding:5px;background-color:#e9ecef">FEATURED CHEFS</div>
-                    <div class="scrollmenu" id="featuredChefs" style="background-color:#dbdbdb;">  </div>
-                  </div>
+            <div class="card" id="content" style="box-shadow:1px 1px 1px 1px;margin:10px;background-image: linear-gradient(white,#e8ce91);">
+              <image src="https://communaltable.files.wordpress.com/2013/02/tim-afc.jpg" style="width:130px;height:150px; margin-left:auto;margin-right:auto;margin-top:30px;margin-bottom:10px;border: 3px outset;">
+              <p style="text-align:center;font-size:30px;margin-bottom:-10px">Mark Tusky</p>
+              <p style="text-align:center;margin-bottom:-1px">Gluten-free</p>
+              <div style="margin-left:auto;margin-right:auto;">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
               </div>
+              <h1 style="text-align:center;font-size:20px;margin-top:20px;">From this chef</h1>
+
+              <div class="card" style="margin:10px;background:white">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3rarIeTmdpzJVUuwolSygjTk7ApLApYpKjv_5XTtIGP89LJWE" style="width:250px;height:200px; margin-left:auto;margin-right:auto;margin-top:30px;margin-bottom:10px;">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqEkW0PYekpCkSmaijYiEJei8QnvVtB913ZY_MddWMgXwna2_d" style="width:250px;height:200px; margin-left:auto;margin-right:auto;margin-top:10px;margin-bottom:10px;">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8YfqHhSJTZhkl-L02doD4JhNju8z6VwA3sQq_eXgHZ2neQdg9lQ" style="width:250px;height:200px; margin-left:auto;margin-right:auto;margin-top:10px;margin-bottom:10px;">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrNIj0otrAwwsunS1v2YpNMVJlNimnu9ZLuCNjXoqxSVuPYHO-lg" style="width:250px;height:200px; margin-left:auto;margin-right:auto;margin-top:10px;margin-bottom:10px;">
+              </div>
+
+      </div>
 
 
   </main>
