@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--  Font awesome icons  -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!--  aclonica font -->
+  <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+  <!--  berkshire font -->
+  <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet'>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Argon CSS -->
+  <link type="text/css" href="assets/css/argon.css?v=1.0.0" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <title>Chefs</title>
+
+
+  <style>
+
+
+    .sidenav {
+      height: 100%;
+      width: 0; /* javascript will change this*/
+      position: fixed;
+      z-index: 1; /* Stay on top */
+      top: 0; /* Stay at the top */
+      left: 0;
+      background-image: linear-gradient(#e28b20,#f9e032);
+      overflow-x: hidden; /* Disable horizontal scroll */
+      padding-top: 20px; /* Place content 60px from the top */
+      transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #494b4c;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      float:right;
+      font-size: 30px;
+      margin-left: 10px;
+    }
+
+
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+
+
+
+
+    div.scrollmenu {
+      background-color: white;
+      overflow: auto;
+      white-space: nowrap;
+    }
+
+    div.scrollmenu div {
+      display: inline-block;
+      text-align: center;
+    }
+
+    div.scrollmenu div:hover {
+      background-color: #777;
+    }
+
+    .checked {
+      color: orange;
+    }
+
+    //image_gallery
+    div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+  </style>
+
+  <script>
+
+      // side nav
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      //End of side nav
+
+
+
+    </script>
+</head>
+
+<body style="background-color:#d7d7f7">
+  <main>
+
+              <!--      Top Bar    -->
+                <div style="padding:10px; background-image: linear-gradient(to bottom right,#e28b20,#f9e032); box-shadow:1px 2px 5px 1px rgba(0,0,0,0.2);">
+                <span style="display: inline-block;width:20%;text-align:center;float:left;color:#fff7d3" onclick="openNav()"><i class="fa fa-bars" style="font-size:30px"></i></span>
+                <span style="display: inline-block;width:60%;text-align:center;font-size:23px;font-family:Berkshire Swash;color:#f9e0e0;text-shadow: 1px 1px #a5a4a4;">CHEFS</span>
+                <span style="display: inline-block;width:10%;text-align:center;float:right;"><a href="http://www.google.com"> <i class="fa fa-shopping-cart" style="font-size:30px;color:#fff7d3"></i> </a></span>
+                <span style="display: inline-block;width:10%;text-align:center;float:right;color:#fff7d3"><i class="fa fa-search" style="font-size:30px"></i></span>
+              </div>
+
+              <!--      Side Nav     -->
+              <div id="mySidenav" class="sidenav">
+                <div>
+                  <a href="http://kabirdas.xyz/TheKitchenProject/home" style="font-size:40px; font-family:Aclonica;color:#f9e0e0;text-shadow: 4px 1px #4c5258; padding:25px"> The Kitchen Project </a>
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                </div>
+                <hr/ style="margin-left:8px;margin-right:8px;margin-bottom:20px; margin-top:1px;border:1px inset">
+                <a href="http://www.google.com"> <i class="fa fa-user-circle-o"></i> My Account</a>
+                <a href="http://kabirdas.xyz/TheKitchenProject/home"> <i class="fa fa-home"></i> Home</a>
+                <a href="http://kabirdas.xyz/TheKitchenProject/explore"> <i class="fa fa-eye"></i> Explore</a>
+                <a href="http://kabirdas.xyz/TheKitchenProject/orders"><i class="fa fa-shopping-cart"></i> Orders</a>
+                <a href="http://www.google.com"> <i class="fa fa-address-book-o"></i> Contact Us</a>
+              </div>
+
+              <!--     content         -->
+            <div class="card" id="content" style="box-shadow:1px 1px 1px 1px;background-image: linear-gradient(white,#e8ce91);">
+              <image src="https://communaltable.files.wordpress.com/2013/02/tim-afc.jpg" style="width:130px;height:150px; margin-left:auto;margin-right:auto;margin-top:20px;margin-bottom:5px;border-radius: 10px;box-shadow:1px 1px 1px 1px;">
+              <p style="text-align:center;font-size:20px;margin-bottom:-10px">Mark Tusky</p>
+              <p style="text-align:center;margin-bottom:-1px">Gluten-free</p>
+              <div style="margin-left:auto;margin-right:auto;">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+
+
+              <div class="card" style="margin:10px;background-color:#e0e2e4;">
+                  <h1 style="text-align:center;color:#5a5d61;font-size:18px;background-image: linear-gradient(#8feeff,#a5ff82);padding:15px;">FROM THIS CHEF</h1>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3rarIeTmdpzJVUuwolSygjTk7ApLApYpKjv_5XTtIGP89LJWE" style="width:200px;height:170px; margin-left:auto;margin-right:auto;margin-top:30px;margin-bottom:10px;">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqEkW0PYekpCkSmaijYiEJei8QnvVtB913ZY_MddWMgXwna2_d" style="width:200px;height:170px; margin-left:auto;margin-right:auto;margin-top:10px;margin-bottom:10px;">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8YfqHhSJTZhkl-L02doD4JhNju8z6VwA3sQq_eXgHZ2neQdg9lQ" style="width:200px;height:170px; margin-left:auto;margin-right:auto;margin-top:10px;margin-bottom:10px;">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrNIj0otrAwwsunS1v2YpNMVJlNimnu9ZLuCNjXoqxSVuPYHO-lg" style="width:200px;height:170px; margin-left:auto;margin-right:auto;margin-top:10px;margin-bottom:10px;">
+              </div>
+
+      </div>
+
+
+  </main>
+
+  <!-- Core -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/popper/popper.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <!-- <script src="assets/vendor/headroom/headroom.min.js"></script> -->
+  <!-- Argon JS -->
+  <script src="assets/js/argon.js?v=1.0.0"></script>
+</body>
+
+</html>
